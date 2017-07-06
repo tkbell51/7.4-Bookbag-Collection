@@ -18,6 +18,7 @@ module.exports = {
     console.log(req.body.brand);
 
     const newBag = new Bookbags ({
+      name: add.name,
       brand: add.brand,
       type: add.type,
       size: add.size,
@@ -35,9 +36,17 @@ module.exports = {
     let context = {}
     Bookbags.find().then(results =>{
       context.model = results
-      console.log(results);
+
       res.render('bookbags', context);
   });
-}
+},
+profileBag: function(req, res){
+    var context ={};
+    var user = req.params.id;
 
+    Bookbags.find({ "_id": user}).then(results=>{
+      context.model = results
+      res.render('profileBag', context);
+    });
+}
 };

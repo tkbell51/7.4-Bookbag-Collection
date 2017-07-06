@@ -3,39 +3,92 @@
   <head>
     <meta charset="utf-8">
     <title>Add Bookbag</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../public/main.js">
   </head>
   <body>
     <h1>Add Bookbag</h1>
-    <form class="addBookbag" action="/addBag" method="post">
+    <div class="row">
 
-      <input type="text" name="brand" value="" placeholder="Brand">
+
+    <form class="addBookbag col s12" action="/addBag" method="post">
+      <div class="row">
+
+      <div class="input-field col s12">
+        <input type="text" name="name" value="" placeholder="Bag Name">
+      </div>
+</div>
+<div class="row">
+  <div class="input-field col s12">
+    <input type="text" name="brand" value="" placeholder="Brand">
+  </div>
+</div>
+
+
+
+<div class="input-field col s12 m6">
+
 
       <select class="type" name="type" >
-        <option value="" disabled selected hidden>Type of Bookbag</option>
+        <option value="" disabled selected>Type of Bookbag</option>
         <option value="Backpack">Backpack</option>
         <option value="Duffel Bag">Duffel Bag</option>
         <option value="Canvas Backpack">Canvas Backpack</option>
         <option value="Messenger Bag">Messenger Bag</option>
         <option value="Drawstring Backpack">Drawstring Backpack</option>
       </select>
+</div>
+<div class="input-field col s12 m6">
+
 
       <select class="size" name="size">
-        <option value="" disabled selected hidden>Size of Bag</option>
+        <option value="" disabled selected>Size of Bag</option>
         <option value="Small">Small</option>
         <option value="Medium">Medium</option>
         <option value="Large">Large</option>
       </select>
+</div>
 
-      <input type="text" name="straps" value="" placeholder="Number of Straps">
 
-      <input type="text" name="color" value="" placeholder="Color">
+    <div class="row">
+      <div class="input-field col s6">
+        <input type="text" name="color" value="" placeholder="Color">
+      </div>
+      <div class="input-field col s3">
+        <input type="text" name="straps" value="" placeholder="Number of Straps">
+      </div>
+      <div class="input-field col s3">
+        <input type="text" name="pockets" value="" placeholder="Number of Pockets">
+      </div>
+    </div>
 
-      <input type="text" name="pockets" value="" placeholder="Number of Pockets">
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea" name="description" placeholder="Describe your bookbag..."></textarea>
 
-      <input type="text" name="location" value="" placeholder="Where its used">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="textarea2" class="materialize-textarea" name="location" placeholder="Where its Used..."></textarea>
 
-      <textarea name="description" rows="8" cols="80" placeholder="Describe your bookbag..."></textarea>
-      <input type="submit" name="addBag" value="Add Bookbag">
+      </div>
+    </div>
+
+    <button class="btn waves-effect waves-light" type="submit" name="addBag">
+    <i class="material-icons right">Add Bookbag</i>
+  </button>
+
+
+
     </form>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+  $('select').material_select();
+});
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@ const mustacheExpress = require('mustache-express');
 const bookbagController = require('./controllers/bookbagController');
 const app = express();
 
+app.use(express.static('public'));
 app.engine('mustache', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', './views');
@@ -20,7 +21,10 @@ app.get('/', bookbagController.list);
 app.get('/addbag', bookbagController.bagForm)
 app.post('/addbag', bookbagController.addBag);
 app.get('/bookbags', bookbagController.bookbag);
+app.get('/bookbags/:id', bookbagController.profileBag)
+
 // const thule = new Bookbag ({
+//   name: "School bag",
 //   brand: "THULE",
 //   type: "backpack",
 //   size: "medium",
@@ -33,7 +37,7 @@ app.get('/bookbags', bookbagController.bookbag);
 // thule.use.push(use);
 // thule.save();
 //
-// const jordan = new Bookbag({brand: "Jordan", type: "backpack", size: "medium", straps: 2, color: "black", pockets: 2, description: "black one buckle small zipper in front tech bag side pockets"})
+// const jordan = new Bookbag({name: "Travel bag", brand: "Jordan", type: "backpack", size: "medium", straps: 2, color: "black", pockets: 2, description: "black one buckle small zipper in front tech bag side pockets"})
 // var use = {location: "overnight bag"}
 // jordan.use.push(use);
 // jordan.save();

@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Bookbags</title>
-  </head>
-  <body>
-    <h1>Bookbags</h1>
-{{#model}}
-<h2>Brand: {{brand}}</h2>
-<h3>Type: {{type}}</h3>
-<h3>Size: {{size}}</h3>
-<h3>How many straps: {{straps}}</h3>
-<h3>Color: {{color}}</h3>
-<h3>How many pockets: {{pockets}}</h3>
-{{#use}}
-<h3>Where its used: {{location}}</h3>
-{{/use}}
-<h4>Description: {{description}}</h4>
-{{/model}}
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Bookbags</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+  <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+  <h1>Bookbags</h1>
+  <ul>
+    {{#model}}
+    <li>
+      <a href="/bookbags/{{_id}}">{{name}}</a>
+      <h2>Brand: {{brand}}</h2>
+      <h3>Type: {{type}}</h3>
+      <h3>Size: {{size}}</h3>
+      <h3>How many straps: {{straps}}</h3>
+      <h3>Color: {{color}}</h3>
+      <h3>How many pockets: {{pockets}}</h3>
+      {{#use}}
+      <h3>Where its used: {{location}}</h3>
+      {{/use}}
+      <h4>Description: {{description}}</h4>
+    </li>
+    {{/model}}
+  </ul>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+</body>
 </html>
