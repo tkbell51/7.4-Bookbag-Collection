@@ -1,0 +1,26 @@
+{
+  "name": "7.4.1-collection",
+  "version": "1.0.0",
+  "description": "bookbag collection",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tim Bell",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.8",
+    "mustache-express": "^1.2.5"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "mongoose",
+    "express",
+    "node",
+    "bookbag",
+    "collection"
+  ]
+}

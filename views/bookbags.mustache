@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bookbags</title>
+  </head>
+  <body>
+    <h1>Bookbags</h1>
+{{#model}}
+<h2>Brand: {{brand}}</h2>
+<h3>Type: {{type}}</h3>
+<h3>Size: {{size}}</h3>
+<h3>How many straps: {{straps}}</h3>
+<h3>Color: {{color}}</h3>
+<h3>How many pockets: {{pockets}}</h3>
+{{#use}}
+<h3>Where its used: {{location}}</h3>
+{{/use}}
+<h4>Description: {{description}}</h4>
+{{/model}}
+  </body>
+</html>
